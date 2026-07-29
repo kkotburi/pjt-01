@@ -13,19 +13,21 @@ if file_path.exists():  # 파일이 존재할 경우
         books = json.load(f)
 
     # 3. 출판사별 도서 수 집계
-    publisher_counts = {}  # 출판사별 도서 수를 저장할 딕셔너리
-    publisher_counts =  defaultdict(int)
+    publisher_counts =  defaultdict(int)  # 출판사별 도서 수를 저장할 딕셔너리
+    
 
     for book in books:
         # 출판사별로 도서 수를 집계하는 코드
-        if book['publisher'] in publisher_counts:
-            publisher_counts[book['publisher']] += 1
-        else:
-            publisher_counts[book['publisher']] = 1
+        # if book['publisher'] in publisher_counts:
+        #     publisher_counts[book['publisher']] += 1
+        # else:
+        #     publisher_counts[book['publisher']] = 1
+
         # get() method 사용
         # publisher_counts[book['publisher']] = publisher_counts.get(book['publisher'], 0) + 1
+
         # defaultdict 사용 
-        # publisher_counts[book['publisher']] += 0
+        publisher_counts[book['publisher']] += 1
 
     # 4. 결과 출력
     print("출판사별 도서 수:")
