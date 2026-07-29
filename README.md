@@ -1,4 +1,4 @@
-## 🚨 트러블슈팅
+## 🚨 Trouble Shooting
 
 ### 1. `[Errno 2] No such file or directory`
 
