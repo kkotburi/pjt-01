@@ -2,7 +2,6 @@ import json  # JSON 파일을 처리하기 위한 라이브러리
 from pathlib import Path  # 파일 경로를 처리하기 위한 라이브러리
 
 # 1. 파일 경로 설정 (books_500.json 사용)
-# 파일 경로 설정 부분
 file_path = Path('./data/books_500.json')
 
 # 파일 존재 여부 확인

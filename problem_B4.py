@@ -5,7 +5,7 @@ from pathlib import Path  # 파일 경로 처리를 위한 라이브러리
 # 
 
 # 1. 파일 경로 설정 (books_500.json 사용)
-pass  # 파일 경로 설정 부분
+file_path = Path('./data/books_500.json')
 
 # 파일 존재 여부 확인
 if file_path.exists():  # 파일이 존재할 경우
