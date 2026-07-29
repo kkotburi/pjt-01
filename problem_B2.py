@@ -9,8 +9,8 @@ file_path = Path('./data/books_500.json')
 if file_path.exists():  # 파일이 존재할 경우
     # 2. 파일 열기
     # 파일을 열고 JSON 데이터를 읽는 코드 (파일 열기, json.load 사용)
-    with file_path.open(encoding='utf-8') as f:
-        books = json.load(f)
+    with file_path.open(encoding='utf-8') as file:
+        books = json.load(file)
 
     # 3. 출판사별 도서 수 집계
     publisher_counts =  defaultdict(int)  # 출판사별 도서 수를 저장할 딕셔너리

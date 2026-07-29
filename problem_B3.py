@@ -14,14 +14,15 @@ if file_path.exists():  # 파일이 존재할 경우
     category_stats = {}  # 카테고리별 통계를 저장할 딕셔너리
 
     for book in books:
+        # 카테고리별로 도서 수와 가격을 집계하는 코드
         category = book['categoryName']
         price = book['priceSales']
 
         if category not in category_stats:
-            category_stats[category] = {'count' : 0, 'price' : 0} 
+            category_stats[category] = {'count' : 0, 'price' : 0}
+
         category_stats[category]['count'] += 1
         category_stats[category]['price'] += price
-    # 카테고리별로 도서 수와 가격을 집계하는 코드
 
     # 4. 결과 출력
     print("카테고리별 도서 통계:")
@@ -29,4 +30,4 @@ if file_path.exists():  # 파일이 존재할 경우
         print(f"{category} : {stats['count']}권, 평균 가격 {stats['price'] / stats['count']:.2f}원")  # 도서 수와 평균 가격을 출력하는 코드
 else:
     print(f"파일이 존재하지 않습니다: {file_path}")
-
+    
