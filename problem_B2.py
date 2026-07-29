@@ -1,5 +1,6 @@
 import json  # JSON 파일을 처리하기 위한 라이브러리
 from pathlib import Path  # 파일 경로를 처리하기 위한 라이브러리
+from collections import defaultdict
 
 # 1. 파일 경로 설정 (books_500.json 사용)
 file_path = Path('./data/books_500.json')
@@ -13,11 +14,18 @@ if file_path.exists():  # 파일이 존재할 경우
 
     # 3. 출판사별 도서 수 집계
     publisher_counts = {}  # 출판사별 도서 수를 저장할 딕셔너리
+    publisher_counts =  defaultdict(int)
+
     for book in books:
+        # 출판사별로 도서 수를 집계하는 코드
         if book['publisher'] in publisher_counts:
             publisher_counts[book['publisher']] += 1
         else:
             publisher_counts[book['publisher']] = 1
+        # get() method 사용
+        # publisher_counts[book['publisher']] = publisher_counts.get(book['publisher'], 0) + 1
+        # defaultdict 사용 
+        # publisher_counts[book['publisher']] += 0
 
     # 4. 결과 출력
     print("출판사별 도서 수:")
